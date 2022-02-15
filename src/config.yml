@@ -1,0 +1,5 @@
+services:
+  - name: foo-api
+    url: http://localhost:3001
+  - name: bar-api
+    url: http://localhost:3002
