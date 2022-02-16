@@ -2,13 +2,13 @@
   "name": "node-api-gateway",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "src/server.ts",
   "scripts": {
     "dev": "ts-node-dev --respawn --transpile-only --ignore node_modules ./src/server.ts"
   },
   "keywords": [],
-  "author": "",
-  "license": "ISC",
+  "author": "Gabriel Lins",
+  "license": "MIT",
   "dependencies": {
     "express": "^4.17.2",
     "express-http-proxy": "^1.6.3",
