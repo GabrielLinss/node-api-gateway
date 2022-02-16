@@ -10,6 +10,7 @@
   "author": "Gabriel Lins",
   "license": "MIT",
   "dependencies": {
+    "dotenv": "^16.0.0",
     "express": "^4.17.2",
     "express-http-proxy": "^1.6.3",
     "helmet": "^5.0.2",
