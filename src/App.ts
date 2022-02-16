@@ -1,30 +1,22 @@
-import * as express from 'express'
-import * as logger from 'morgan'
+import express, { Application } from 'express'
+import logger from 'morgan'
 import helmet from 'helmet'
-import * as httpProxy from 'express-http-proxy'
+import httpProxy from 'express-http-proxy'
 import { resolve } from 'path'
 import { readFileSync } from 'fs'
 import { load } from 'js-yaml'
-
-interface Service {
-    name: string
-    url: string
-}
-
-interface Config {
-    services?: Service[]
-}
+import { Config } from './contracts'
 
 class App {
-    private express: express.Application;
+    private express: Application;
 
     constructor () {
       this.express = express()
 
-      this.middlewares()
+      this.applyMiddlewares()
     }
 
-    middlewares () {
+    applyMiddlewares () {
       this.express.use(logger('dev'))
       this.express.use(helmet())
       this.express.use(express.json())
