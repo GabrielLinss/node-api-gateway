@@ -16,7 +16,7 @@ class App {
       this.applyMiddlewares()
     }
 
-    applyMiddlewares () {
+    private applyMiddlewares () {
       this.express.use(logger('dev'))
       this.express.use(helmet())
       this.express.use(express.json())
@@ -32,7 +32,7 @@ class App {
     }
 
     run () {
-      const port = 3000
+      const port = process.env.PORT || 3000
 
       this.express.listen(port, () => console.log(`Application is runnning on port: ${port}`))
     }
